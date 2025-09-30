@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>BatteryChecker – Privacy Policy / Datenschutzerklärung</title>
+  <style>
+    :root{--bg:#0f1720;--card:#0b1220;--accent:#1f2937;--text:#e6eef8;--muted:#9fb0c6}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#0b1116, #0f1720);color:var(--text);margin:0;padding:32px}
+    .wrap{max-width:1100px;margin:0 auto}
+    header{display:flex;align-items:center;gap:20px}
+    h1{font-size:20px;margin:0}
+    .lang-switch{margin-left:auto}
+    .lang-switch button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:8px 12px;border-radius:8px;margin-left:8px;cursor:pointer}
+    main{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+    .card{background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    h2{margin-top:0}
+    p{color:var(--muted);line-height:1.5}
+    .note{font-size:13px;color:#a7bed4}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+    @media (max-width:880px){main{grid-template-columns:1fr} .lang-switch{margin-top:12px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>BatteryChecker — Privacy Policy / Datenschutzerklärung</h1>
+        <div class="note">This single file contains both the English and German versions for easy upload to your website or linking from the Play Store.</div>
+      </div>
+      <div class="lang-switch">
+        <button onclick="location.hash='en';showLang('en')">English</button>
+        <button onclick="location.hash='de';showLang('de')">Deutsch</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="en" class="card">
+        <!-- English privacy policy -->
+        <h2>Privacy Policy (English)</h2>
+        <p><strong>BatteryChecker</strong> respects your privacy. We take data protection seriously and want to be transparent about how our app works.</p>
+
+        <h3>1. Data Collection and Processing</h3>
+        <p><strong>No personal data:</strong> The app does <strong>not</strong> collect or store any personal information.<br>
+        <strong>System information:</strong> BatteryChecker only displays technical device information (for example: battery, CPU, or GPU data) directly on your phone. This information is never sent to us or to third parties.</p>
+
+        <h3>2. Permissions</h3>
+        <p>The app only requests the minimum system permissions necessary to read battery, CPU, and GPU values. No unnecessary permissions are requested.</p>
+
+        <h3>3. Data Sharing</h3>
+        <p>There is no sharing of data with third parties. The app does not include advertisements, tracking, or analytics services.</p>
+
+        <h3>4. Changes</h3>
+        <p>We may update this privacy policy if necessary. Updates will be published in the app store description and on this page.</p>
+
+        <h3>5. Contact</h3>
+        <p>If you have any questions regarding this privacy policy, please contact us at: <strong>[your-email@example.com]</strong><br>
+        Replace the email address with your actual contact address before publishing.</p>
+
+        <footer>
+          <div>Last updated: <span id="en-date">--</span></div>
+        </footer>
+      </section>
+
+      <section id="de" class="card">
+        <!-- German privacy policy -->
+        <h2>Datenschutzerklärung (Deutsch)</h2>
+        <p><strong>BatteryChecker</strong> respektiert Ihre Privatsphäre. Wir nehmen den Schutz Ihrer Daten sehr ernst und möchten transparent machen, wie unsere App funktioniert.</p>
+
+        <h3>1. Datenerhebung und -verarbeitung</h3>
+        <p><strong>Keine personenbezogenen Daten:</strong> Die App sammelt oder speichert <strong>keine</strong> personenbezogenen Daten.<br>
+        <strong>Systeminformationen:</strong> BatteryChecker zeigt ausschließlich technische Informationen Ihres Geräts (z. B. Batterie-, CPU- oder GPU-Daten) direkt auf Ihrem Smartphone an. Diese Daten werden nicht an uns oder Dritte übertragen.</p>
+
+        <h3>2. Berechtigungen</h3>
+        <p>Die App benötigt nur die notwendigen Systemzugriffe, um Batterie-, CPU- und GPU-Werte auslesen zu können. Es werden keine unnötigen Berechtigungen angefordert.</p>
+
+        <h3>3. Weitergabe von Daten</h3>
+        <p>Es findet keine Weitergabe von Daten an Dritte statt. Es erfolgt keine Werbung, kein Tracking und keine Analyse durch externe Dienste.</p>
+
+        <h3>4. Änderungen</h3>
+        <p>Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen. Änderungen werden in der App-Store-Beschreibung und auf dieser Seite veröffentlicht.</p>
+
+        <h3>5. Kontakt</h3>
+        <p>Falls Sie Fragen zur Datenschutzerklärung haben, wenden Sie sich bitte an: <strong>[deine-email@beispiel.de]</strong><br>
+        Ersetzen Sie die E-Mail-Adresse durch Ihre tatsächliche Kontaktadresse, bevor Sie die Seite veröffentlichen.</p>
+
+        <footer>
+          <div>Zuletzt aktualisiert: <span id="de-date">--</span></div>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // simple language show/hide
+    function showLang(lang){
+      document.getElementById('en').style.display = (lang==='en') ? 'block' : 'none';
+      document.getElementById('de').style.display = (lang==='de') ? 'block' : 'none';
+    }
+    // set dates to today
+    const today = new Date().toLocaleDateString();
+    document.getElementById('en-date').textContent = today;
+    document.getElementById('de-date').textContent = today;
+
+    // Initialize based on hash or default to English
+    (function(){
+      const h = location.hash.replace('#','');
+      if(h==='de') showLang('de'); else showLang('en');
+    })();
+  </script>
+</body>
+</html>
