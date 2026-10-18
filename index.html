@@ -3,109 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MrBlackChris Apps</title>
+  <meta name="description" content="Electronics projects and useful apps by MrBlackChris. Explore the ESP32 Function Generator, OpenCaliper signal analysis tool, and Android apps.">
+  <title>MrBlackChris | Electronics &amp; Apps</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .app {
-      background: white;
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .app h2 {
-      margin-top: 0;
-      color: #0070f3;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      background: #0070f3;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    a.button:hover {
-      background: #0057c2;
-    }
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      background: #eee;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.65; background: #f5f7fa; color: #263447; }
+    a { color: #075bb5; text-underline-offset: 4px; }
+    a:focus-visible { outline: 3px solid #c87900; outline-offset: 5px; }
+    .container { max-width: 1120px; margin: auto; padding: 0 1.5rem; }
+    header { background: #172638; color: white; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; }
+    .brand { color: white; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+    nav { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+    nav a { color: #e0ebf7; }
+    .hero { padding: 4rem 0; max-width: 760px; }
+    .eyebrow, .tag { text-transform: uppercase; letter-spacing: .09em; font-size: .75rem; font-weight: bold; }
+    .eyebrow { color: #9ecbff; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.7rem); line-height: 1.15; margin: 1rem 0; letter-spacing: -.035em; }
+    .hero p { color: #d5e1ef; font-size: 1.1rem; }
+    main { padding-top: 1rem; padding-bottom: 2rem; }
+    section { margin: 3rem 0; scroll-margin-top: 1.5rem; }
+    h2 { font-size: 1.9rem; color: #172638; margin-bottom: .25rem; }
+    .section-intro { margin-top: 0; color: #526173; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1.5rem; }
+    .card { background: white; border: 1px solid #dce3eb; border-radius: 14px; padding: 1.5rem; box-shadow: 0 4px 16px #17263806; }
+    .card h3 { font-size: 1.35rem; color: #172638; margin: .6rem 0; }
+    .card p { margin-top: .5rem; }
+    .tag { color: #32638b; }
+    .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .preview { display: block; border-radius: 8px; overflow: hidden; border: 1px solid #dce3eb; background: #eef2f6; }
+    .preview img { display: block; width: 100%; height: auto; }
+    .button { display: inline-block; margin: .5rem .5rem 0 0; padding: .65rem 1.1rem; border-radius: 7px; background: #075bb5; color: white; text-decoration: none; font-weight: bold; }
+    .button:hover { background: #06478d; }
+    .secondary { background: #eaf1fa; color: #174e86; }
+    .secondary:hover { background: #dae7f6; }
+    .community { margin: 3rem 0 1rem; border-left: 4px solid #075bb5; }
+    .community h2 { font-size: 1.3rem; margin-top: 0; }
+    footer { border-top: 1px solid #dce3eb; padding: 1.5rem; text-align: center; font-size: .9rem; color: #526173; }
+    .skip-link { position: absolute; top: -5rem; left: 1rem; padding: .75rem; background: white; }
+    .skip-link:focus { top: 1rem; }
+    @media (max-width: 700px) { .featured { grid-template-columns: 1fr; gap: 1.5rem; } .hero { padding: 2.5rem 0; } nav { gap: 1rem; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
-    <h1>Welcome to My Apps</h1>
-    <p>A collection of useful apps for everyday life</p>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="./">MrBlackChris</a>
+        <nav aria-label="Main navigation">
+          <a href="#electronics">Electronics</a>
+          <a href="#apps">Apps</a>
+          <a href="https://github.com/mrblackchris">GitHub</a>
+        </nav>
+      </div>
+      <div class="hero">
+        <span class="eyebrow">Electronics &amp; software</span>
+        <h1>Tools you can use.</h1>
+        <p>Welcome to my collection of electronics projects and apps.</p>
+        <a class="button" href="#electronics">Explore electronics</a>
+        <a class="button secondary" href="#apps">Browse apps</a>
+      </div>
+    </div>
   </header>
-  <main>
-    <div class="app">
-      <h2>Join the Testers Community</h2>
-      <p>Join our testers community to get access to app testing programs</p>
-      <a class="button" href="https://groups.google.com/g/testers-community" target="_blank">Join group</a>
-    </div>
-    
-    <div class="app">
-      <h2>SuperDim</h2>
+  <main id="main" class="container">
+    <section id="electronics" aria-labelledby="electronics-title">
+      <h2 id="electronics-title">Electronics</h2>
+      <p class="section-intro">Embedded projects and practical tools for the workbench.</p>
+      <article class="card featured">
+        <div>
+          <span class="tag">ESP32 &middot; Open source</span>
+          <h3>ESP32 Function Generator</h3>
+          <p>A five-channel signal generator for the classic ESP32. Configure three complementary PWM pairs with adjustable duty and dead time, plus two multifunction outputs for pulses, bursts, and analog waveforms.</p>
+          <p>Control it over Wi-Fi, through a USB browser interface, or with the Python desktop app.</p>
+          <a class="button" href="https://github.com/mrblackchris/Esp32FunctionGenerator">View repository</a>
+          <a class="button secondary" href="https://github.com/mrblackchris/Esp32FunctionGenerator/blob/HEAD/docs/GETTING_STARTED.md">Getting started</a>
+        </div>
+        <a class="preview" href="assets/images/esp32-function-generator.png" aria-label="View ESP32 Function Generator screenshot at full size">
+          <img src="assets/images/esp32-function-generator.png" alt="ESP32 Function Generator interface with PWM pairs, multifunction outputs, and network settings" loading="lazy">
+        </a>
+      </article>
+    </section>
+    <section id="apps" aria-labelledby="apps-title">
+      <h2 id="apps-title">Apps</h2>
+      <p class="section-intro">Software for exploring measurements, learning, and everyday life.</p>
+      <article class="card featured">
+        <div>
+          <span class="tag">Python desktop app &middot; Open source</span>
+          <h3>OpenCaliper</h3>
+          <p>A measurement data viewer and analysis tool for Windows and Linux. Open recorded signals, compare them in plots, measure with differential cursors, and explore FFT spectra and statistics.</p>
+          <p>Import and convert supported measurement formats, with a desktop interface, command-line tools, and a Python API.</p>
+          <a class="button" href="https://github.com/mrblackchris/opencaliper">View repository</a>
+          <a class="button secondary" href="https://github.com/mrblackchris/opencaliper/blob/HEAD/docs/USER_GUIDE.md">User guide</a>
+        </div>
+        <a class="preview" href="assets/images/opencaliper.png" aria-label="View OpenCaliper screenshot at full size">
+          <img src="assets/images/opencaliper.png" alt="OpenCaliper workspace displaying example signals and measurement analysis plots" loading="lazy">
+        </a>
+      </article>
+      <h3 style="margin-top: 2rem">Android apps</h3>
+      <div class="grid">
+    <article class="card">
+      <h3>SuperDim</h3>
       <p>An easy-to-use dimming app to adjust your screen brightness for comfort and energy saving.</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.superdim" target="_blank">View App</a>
-    </div>
-
-    <div class="app">
-      <h2>MediaSwipe</h2>
+      <a class="button" href="https://play.google.com/store/apps/details?id=com.superdim" target="_blank" rel="noopener noreferrer">View App</a>
+    </article>
+    <article class="card">
+      <h3>MediaSwipe</h3>
       <p>Swipe through your media library easily – designed for kids and adults alike.</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.mediaswipe" target="_blank">View App</a>
-      <a class="button" href="https://play.google.com/apps/testing/com.mediaswipe" target="_blank">Test App</a>
-    </div>
-
-    <div class="app">
-      <h2>BatteryChecker</h2>
+      <a class="button" href="https://play.google.com/store/apps/details?id=com.mediaswipe" target="_blank" rel="noopener noreferrer">View App</a>
+      <a class="button" href="https://play.google.com/apps/testing/com.mediaswipe" target="_blank" rel="noopener noreferrer">Test App</a>
+    </article>
+    <article class="card">
+      <h3>BatteryChecker</h3>
       <p>Check your battery status and other information</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=de.batterychecker" target="_blank">View App</a>
-      <a class="button" href="https://play.google.com/apps/testing/de.batterychecker" target="_blank">Test App</a>
-    </div>
-
-    <div class="app">
-      <h2>NotixLearn</h2>
+      <a class="button" href="https://play.google.com/store/apps/details?id=de.batterychecker" target="_blank" rel="noopener noreferrer">View App</a>
+      <a class="button" href="https://play.google.com/apps/testing/de.batterychecker" target="_blank" rel="noopener noreferrer">Test App</a>
+    </article>
+    <article class="card">
+      <h3>NotixLearn</h3>
       <p>A vocabulary learning app to help you improve your language skills effectively.</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.notixlearn.app" target="_blank">View App</a>
-      <a class="button" href="https://play.google.com/apps/testing/com.notixlearn.app" target="_blank">Test App</a>
-    </div>
-
-    <div class="app">
-      <h2>OpenWorkout</h2>
+      <a class="button" href="https://play.google.com/store/apps/details?id=com.notixlearn.app" target="_blank" rel="noopener noreferrer">View App</a>
+      <a class="button" href="https://play.google.com/apps/testing/com.notixlearn.app" target="_blank" rel="noopener noreferrer">Test App</a>
+    </article>
+    <article class="card">
+      <h3>OpenWorkout</h3>
       <p>A workout calendar app with open-source calendar sharing for flexible fitness planning.</p>
-      <a class="button" href="https://play.google.com/store/apps/details?id=com.openworkout.app" target="_blank">View App</a>
-      <a class="button" href="https://play.google.com/apps/testing/com.openworkout.app" target="_blank">Test App</a>
-    </div>
-    
+      <a class="button" href="https://play.google.com/store/apps/details?id=com.openworkout.app" target="_blank" rel="noopener noreferrer">View App</a>
+      <a class="button" href="https://play.google.com/apps/testing/com.openworkout.app" target="_blank" rel="noopener noreferrer">Test App</a>
+    </article>
+      </div>
+    </section>
+    <aside class="card community" aria-labelledby="community-title">
+      <h2 id="community-title">Join the Testers Community</h2>
+      <p>Help shape my apps by joining the testers community and trying app testing programs.</p>
+      <a class="button" href="https://groups.google.com/g/testers-community" target="_blank" rel="noopener noreferrer">Join group</a>
+    </aside>
   </main>
-  <footer>
-    &copy; 2026 MrBlackChris – All rights reserved.
-  </footer>
+  <footer>&copy; 2026 MrBlackChris &middot; <a href="https://github.com/mrblackchris">Find me on GitHub</a></footer>
 </body>
 </html>
