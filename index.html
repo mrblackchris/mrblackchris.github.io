@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Electronics projects and useful apps by MrBlackChris. Explore the ESP32 Function Generator, OpenCaliper signal analysis tool, and Android apps.">
+  <meta name="description" content="Electronics projects and useful apps by MrBlackChris. Explore OpenCaliper, ESP32 function generation and motor control, PCBA designs, and Android apps.">
   <title>MrBlackChris | Electronics &amp; Apps</title>
   <style>
     * { box-sizing: border-box; }
@@ -32,6 +32,7 @@
     .card p { margin-top: .5rem; }
     .tag { color: #32638b; }
     .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    .motor-project { margin-top: 1.5rem; }
     .preview { display: block; border-radius: 8px; overflow: hidden; border: 1px solid #dce3eb; background: #eef2f6; }
     .preview img { display: block; width: 100%; height: auto; }
     .button { display: inline-block; margin: .5rem .5rem 0 0; padding: .65rem 1.1rem; border-radius: 7px; background: #075bb5; color: white; text-decoration: none; font-weight: bold; }
@@ -54,7 +55,9 @@
       <div class="topbar">
         <a class="brand" href="./">MrBlackChris</a>
         <nav aria-label="Main navigation">
+          <a href="#opencaliper">OpenCaliper</a>
           <a href="#electronics">Electronics</a>
+          <a href="#pcba">PCBA projects</a>
           <a href="#apps">Apps</a>
           <a href="https://github.com/mrblackchris">GitHub</a>
         </nav>
@@ -63,12 +66,30 @@
         <span class="eyebrow">Electronics &amp; software</span>
         <h1>Tools you can use.</h1>
         <p>Welcome to my collection of electronics projects and apps.</p>
-        <a class="button" href="#electronics">Explore electronics</a>
+        <a class="button" href="#opencaliper">Explore OpenCaliper</a>
+        <a class="button secondary" href="#electronics">Explore electronics</a>
         <a class="button secondary" href="#apps">Browse apps</a>
       </div>
     </div>
   </header>
   <main id="main" class="container">
+    <section id="opencaliper" aria-labelledby="opencaliper-title">
+      <h2 id="opencaliper-title">OpenCaliper</h2>
+      <p class="section-intro">Explore your measurements in the time and frequency domains.</p>
+      <article class="card featured">
+        <div>
+          <span class="tag">Python desktop app &middot; Open source</span>
+          <h3>OpenCaliper</h3>
+          <p>A measurement data viewer and analysis tool for Windows and Linux. Open recorded signals, compare them in plots, measure with differential cursors, and explore FFT spectra and statistics.</p>
+          <p>Import and convert supported measurement formats, with a desktop interface, command-line tools, and a Python API.</p>
+          <a class="button" href="https://github.com/mrblackchris/opencaliper">View repository</a>
+          <a class="button secondary" href="https://github.com/mrblackchris/opencaliper/blob/HEAD/docs/USER_GUIDE.md">User guide</a>
+        </div>
+        <a class="preview" href="assets/images/opencaliper.png" aria-label="View OpenCaliper screenshot at full size">
+          <img src="assets/images/opencaliper.png" alt="OpenCaliper workspace displaying example signals and measurement analysis plots" fetchpriority="high">
+        </a>
+      </article>
+    </section>
     <section id="electronics" aria-labelledby="electronics-title">
       <h2 id="electronics-title">Electronics</h2>
       <p class="section-intro">Embedded projects and practical tools for the workbench.</p>
@@ -85,24 +106,35 @@
           <img src="assets/images/esp32-function-generator.png" alt="ESP32 Function Generator interface with PWM pairs, multifunction outputs, and network settings" loading="lazy">
         </a>
       </article>
+      <article class="card motor-project">
+        <span class="tag">ESP32 &middot; Motor control &middot; Open source</span>
+        <h3>ESP32 Motor Control</h3>
+        <p>Open-loop three-phase motor-control firmware for the classic ESP32, generating complementary SVPWM signals with adjustable dead time and an independent pulse output.</p>
+        <p>Configure it through Wi-Fi or USB serial, or use local run and direction switches with a frequency potentiometer. The repository documents wiring, control modes, and the current implementation limits.</p>
+        <a class="button" href="https://github.com/mrblackchris/Esp32MotControl">View repository</a>
+        <a class="button secondary" href="https://github.com/mrblackchris/Esp32MotControl#readme">Wiring &amp; operation</a>
+      </article>
+    </section>
+    <section id="pcba" aria-labelledby="pcba-title">
+      <h2 id="pcba-title">PCBA projects</h2>
+      <p class="section-intro">Circuit designs, PCB layouts, and manufacturing files.</p>
+      <article class="card featured">
+        <div>
+          <span class="tag">KiCad &middot; Gate driver board</span>
+          <h3>Half-Bridge Gate Driver Board</h3>
+          <p>A compact PCB for driving an external half-bridge power stage. The design combines an IR2104 gate driver, optocoupled PWM and shutdown inputs, and an onboard DC/DC converter for the driver supply.</p>
+          <p>Explore the KiCad schematic and two-layer PCB layout, along with exported Gerber and drill files. Assembled-board performance remains to be validated for the intended application.</p>
+          <a class="button" href="https://github.com/mrblackchris/GDB_HalfBridge">View repository</a>
+          <a class="button secondary" href="https://github.com/mrblackchris/GDB_HalfBridge/blob/HEAD/GDB_HalfBridge.kicad_sch">Circuit schematic</a>
+        </div>
+        <a class="preview" href="assets/images/gdb-halfbridge.png" aria-label="View half-bridge gate driver board render at full size">
+          <img src="assets/images/gdb-halfbridge.png" alt="3D render of the half-bridge gate driver PCB with components and connection pins" loading="lazy">
+        </a>
+      </article>
     </section>
     <section id="apps" aria-labelledby="apps-title">
       <h2 id="apps-title">Apps</h2>
-      <p class="section-intro">Software for exploring measurements, learning, and everyday life.</p>
-      <article class="card featured">
-        <div>
-          <span class="tag">Python desktop app &middot; Open source</span>
-          <h3>OpenCaliper</h3>
-          <p>A measurement data viewer and analysis tool for Windows and Linux. Open recorded signals, compare them in plots, measure with differential cursors, and explore FFT spectra and statistics.</p>
-          <p>Import and convert supported measurement formats, with a desktop interface, command-line tools, and a Python API.</p>
-          <a class="button" href="https://github.com/mrblackchris/opencaliper">View repository</a>
-          <a class="button secondary" href="https://github.com/mrblackchris/opencaliper/blob/HEAD/docs/USER_GUIDE.md">User guide</a>
-        </div>
-        <a class="preview" href="assets/images/opencaliper.png" aria-label="View OpenCaliper screenshot at full size">
-          <img src="assets/images/opencaliper.png" alt="OpenCaliper workspace displaying example signals and measurement analysis plots" loading="lazy">
-        </a>
-      </article>
-      <h3 style="margin-top: 2rem">Android apps</h3>
+      <p class="section-intro">Android apps for learning, fitness, and everyday life.</p>
       <div class="grid">
     <article class="card">
       <h3>SuperDim</h3>
